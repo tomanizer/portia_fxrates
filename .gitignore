@@ -60,3 +60,6 @@ target/
 
 #spyder projects
 .spyproject/
+
+#config
+config.json
