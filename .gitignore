@@ -60,6 +60,10 @@ target/
 
 #spyder projects
 .spyproject/
+.spyproject
 
 #config
 config.json
+
+#travis
+.travis.yml

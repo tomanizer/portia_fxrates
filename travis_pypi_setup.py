@@ -47,6 +47,7 @@ def encrypt(pubkey, password):
     The encrypted password can only be decrypted by someone with the
     private key (in this case, only Travis).
     """
+    import pdb; pdb.set_trace()
     key = load_key(pubkey)
     encrypted_password = key.encrypt(password, PKCS1v15())
     return base64.b64encode(encrypted_password)
@@ -105,7 +106,9 @@ def update_travis_deploy_password(encrypted_password):
 
 def main(args):
     public_key = fetch_public_key(args.repo)
+    print(public_key)
     password = args.password or getpass('PyPI password: ')
+    print(password)
     update_travis_deploy_password(encrypt(public_key, password))
     print("Wrote encrypted password to .travis.yml -- you're ready to deploy")
 
