@@ -9,6 +9,7 @@ Tests for `portia_fxrates` module.
 """
 
 import pytest
+from pytest import *
 import pandas as pd
 from datetime import datetime
 
